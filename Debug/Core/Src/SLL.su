@@ -1,0 +1,5 @@
+SLL.c:10:14:createNode	40	static
+SLL.c:23:6:addTask	24	static
+SLL.c:50:6:deleteTask	24	static
+SLL.c:57:6:clearList	16	static
+SLL.c:64:6:deleteTaskID	24	static
