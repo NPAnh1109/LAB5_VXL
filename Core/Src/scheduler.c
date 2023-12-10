@@ -17,7 +17,7 @@ void SCH_Init(){
 };
 
 uint32_t SCH_Add_Task(CALLBACK callback, uint16_t Delay, uint16_t Period){
-	if(idx == SCH_MAX_TASKS - 1) return SCH_MAX_TASKS;
+	if(idx == SCH_MAX_TASKS) return idx - 1;
 	Task_TypeDef_t data;
 	data.callback = callback;
 	data.Delay = Delay;
