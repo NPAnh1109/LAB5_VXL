@@ -16,7 +16,8 @@ void SCH_Init(){
 	idx = 0;
 };
 
-void SCH_Add_Task(CALLBACK callback, uint16_t Delay, uint16_t Period){
+uint32_t SCH_Add_Task(CALLBACK callback, uint16_t Delay, uint16_t Period){
+	if(idx == SCH_MAX_TASKS - 1) return SCH_MAX_TASKS;
 	Task_TypeDef_t data;
 	data.callback = callback;
 	data.Delay = Delay;
@@ -24,6 +25,7 @@ void SCH_Add_Task(CALLBACK callback, uint16_t Delay, uint16_t Period){
 	data.Runme = 0;
 	data.taskID = idx++;
 	addTask(&head, data);
+	return idx-1;
 };
 
 void SCH_Update(){
